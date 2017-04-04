@@ -1,7 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { Component,OnInit,ElementRef,Input } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+import {Http } from '@angular/http';
 
-import { FirstService } from '../service/drinks_list';
+
+import { firstServiceJsonData } from '../service/drinks_list';
+
+
+declare var $:any;
 
 @Component({
   selector: 'app-first',
@@ -10,11 +15,25 @@ import { FirstService } from '../service/drinks_list';
 })
 export class FirstComponent implements OnInit {
 
-  constructor() { }
-  
 
-  ngOnInit() {
-    //this.firstService
-  }
+   constructor(private _http: Http, private firstservicejsondata: firstServiceJsonData ) {}
+
+
+  serviceResultList = [];
+     firstServiceResults() {
+        this.firstservicejsondata.firstService().subscribe(
+            data => {
+                this.serviceResultList = data;
+                console.log(data);
+            },
+            error => console.log(error),
+            () => console.log("Done")
+        );
+     }
+
+
+    ngOnInit() {
+      this.firstServiceResults();
+    }
 
 }

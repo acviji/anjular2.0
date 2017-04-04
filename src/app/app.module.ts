@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpModule }    from '@angular/http';
 
 //Componets
 import { AppComponent } from './app.component';
@@ -8,7 +9,7 @@ import { IndexComponent } from './index/index.component';
 import { FirstComponent } from './first/first.component';
 
 //service
-
+import { firstServiceJsonData } from './service/drinks_list';
 
 
 const vijayroutes: Routes = [
@@ -19,11 +20,8 @@ const vijayroutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent,IndexComponent,FirstComponent],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(vijayroutes)
-  ],
-  providers: [],
+  imports: [BrowserModule, HttpModule,  RouterModule.forRoot(vijayroutes) ],
+  providers: [firstServiceJsonData],
   bootstrap: [AppComponent]
 })
 
