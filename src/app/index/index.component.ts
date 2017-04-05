@@ -7,7 +7,7 @@ import { AppComponent } from '../app.component';
 })
 export class IndexComponent implements OnInit {
 
-   constructor(public app: AppComponent) {}
+ constructor(public app: AppComponent) {}
 
   ngOnInit() {
   }
