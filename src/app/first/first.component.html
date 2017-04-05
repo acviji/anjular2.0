@@ -1,4 +1,5 @@
-<h1>My First Component</h1>
+<h1 [style.color]="isTrue ? 'green' :'red'">My First Component</h1>
+<h2 [ngClass] = "isTrue ? 'green' : 'red'" >Sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h2>
 <h1>--------------------------</h1>
 {{inputValue}}
 <input type="text" #firstText>
@@ -13,7 +14,10 @@
 
 <div>
   <h1>Post results</h1>
-  <div *ngFor="let data of postserviceResultList">
-   <p>{{data.id}}. {{data.title}}</p> 
-  </div>
+    <div *ngFor="let data of postserviceResultList let i = index">
+       <ng-container *ngIf=" i >= 5 && i < 10">
+        <p>{{i + 1}} . {{data.title}}</p> 
+       </ng-container>
+    </div>
 </div>
+  
