@@ -6,14 +6,20 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class firstServiceJsonData {
-    firstServiceUrl = "https://jsonplaceholder.typicode.com/users";
+    usersServiceUrl = "https://jsonplaceholder.typicode.com/users";
+    postsServiceUrl = "https://jsonplaceholder.typicode.com/posts";
 
    constructor(private _http: Http) {}
 
-    firstService() {
+    userService() {
         let headers = new Headers();
         headers.append('Accept', 'application/json');
-        return this._http.get(this.firstServiceUrl,{headers:headers}).map( res => res.json() );
+        return this._http.get(this.usersServiceUrl,{headers:headers}).map( res => res.json() );
+    }
+    postService() {
+        let headers = new Headers();
+        headers.append('Accept', 'application/json');
+        return this._http.get(this.postsServiceUrl,{headers:headers}).map( res => res.json() );
     }
     
 

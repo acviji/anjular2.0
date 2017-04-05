@@ -1,8 +1,19 @@
-<p>
-  my first component
-</p>
-<ul>
-  <li *ngFor="let data of serviceResultList">
-    {{data.id}} <br/>  {{data.name}} <br/>   {{data.email}} <br/>  {{data.website}}<br/><br/>
-  </li>
-</ul>
+<h1>My First Component</h1>
+<h1>--------------------------</h1>
+{{inputValue}}
+<input type="text" #firstText>
+<button (click)="getText(firstText.value)">Click</button>
+<div>
+  <div *ngFor="let data of userserviceResultList">
+   <h2>{{data.name}}</h2> 
+    <p>{{data.email}}</p>
+    <p><a href="http://www.{{data.website}}">{{data.website}}</a></p><br/>
+  </div>
+</div>
+
+<div>
+  <h1>Post results</h1>
+  <div *ngFor="let data of postserviceResultList">
+   <p>{{data.id}}. {{data.title}}</p> 
+  </div>
+</div>

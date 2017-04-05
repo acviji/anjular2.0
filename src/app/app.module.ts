@@ -13,7 +13,7 @@ import { firstServiceJsonData } from './service/drinks_list';
 
 
 const vijayroutes: Routes = [
-  {path:'' , redirectTo :'link2', pathMatch:'full'},
+  {path:'' , redirectTo :'link1', pathMatch:'full'},
   { path: 'link1', component: IndexComponent },
   { path: 'link2', component: FirstComponent }
 ];
