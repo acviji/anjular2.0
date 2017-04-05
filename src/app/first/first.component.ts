@@ -40,6 +40,18 @@ export class FirstComponent implements OnInit {
     );
   }
 
+   userIDResultList = [];
+  userIDResult() {
+    this.firstservicejsondata.postService().subscribe(
+        data => {
+            this.userIDResultList = data;
+            console.log(data);
+        },
+        error => console.log(error),
+        () => console.log("Done")
+    );
+  }
+
    inputValue:any = 'Default Text';
    getText(myvalue){
     this.inputValue = myvalue;
@@ -48,6 +60,7 @@ export class FirstComponent implements OnInit {
     ngOnInit() {
       this.userServiceResults();
       this.postServiceResults();
+      this.userIDResult();
     }
 
 }

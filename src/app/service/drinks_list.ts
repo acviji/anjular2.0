@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 export class firstServiceJsonData {
     usersServiceUrl = "https://jsonplaceholder.typicode.com/users";
     postsServiceUrl = "https://jsonplaceholder.typicode.com/posts";
+    userIDUrlDetails       = "https://jsonplaceholder.typicode.com/posts?userId=1";
 
    constructor(private _http: Http) {}
 
@@ -20,6 +21,12 @@ export class firstServiceJsonData {
         let headers = new Headers();
         headers.append('Accept', 'application/json');
         return this._http.get(this.postsServiceUrl,{headers:headers}).map( res => res.json() );
+    }
+
+    userIDUrl() {
+        let headers = new Headers();
+        headers.append('Accept', 'application/json');
+        return this._http.get(this.userIDUrlDetails,{headers:headers}).map( res => res.json() );
     }
     
 
