@@ -45,7 +45,7 @@ isTrue:boolean = true;
     );
   }
 
-<<<<<<< HEAD
+
    userIDResultList = [];
   userIDResult() {
     this.firstservicejsondata.postService().subscribe(
@@ -58,7 +58,7 @@ isTrue:boolean = true;
     );
   }
 
-=======
+
   postserviceResultfilterList = [];
   filterById(obj){
       var items = obj;
@@ -70,7 +70,7 @@ isTrue:boolean = true;
   }
 
 // Get values from input and bind in HTML 
->>>>>>> origin/master
+
    inputValue:any = 'Default Text';
    getText(myvalue){
     this.inputValue = myvalue;
