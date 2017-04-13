@@ -65,12 +65,7 @@ isTrue:boolean = true;
   }
 
 // Get values from input and bind in HTML 
-<<<<<<< HEAD:src/app/first/first.component.ts
-  inputValue:any = 'Default Text';
-=======
-
    inputValue:any = 'Default Text';
->>>>>>> origin/master:src/app/about/first.component.ts
    getText(myvalue){
     this.inputValue = myvalue;
    }
