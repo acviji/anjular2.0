@@ -1,7 +1,10 @@
-<h1 [style.color]="isTrue ? 'green' :'red'">My First Component</h1>
+<h1 [style.color]="isTrue ? 'green' :'red'">Child Component</h1>
+{{getData}} ==== 
+{{getData1}}
 <h2 [ngClass] = "isTrue ? 'green' : 'red'" >Sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h2>
 <h1>--------------------------</h1>
-{{inputValue}}
+
+{{inputValue}} <br/>
 <input type="text" #firstText>
 <button (click)="getText(firstText.value)">Click</button>
 <div>
@@ -16,7 +19,8 @@
   <h1>Post results</h1>
     <div *ngFor="let data of postserviceResultList let i = index">
        <ng-container *ngIf=" i >= 5 && i < 10">
-        <p>{{i + 1}} . {{data.title}}</p> 
+        <h3>{{i + 1}} . {{data.title}}</h3> 
+        <p>{{data.body}}</p> 
        </ng-container>
     </div>
 </div>

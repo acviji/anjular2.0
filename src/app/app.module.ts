@@ -10,17 +10,21 @@ import { FirstComponent } from './first/first.component';
 
 //service
 import { firstServiceJsonData } from './service/drinks_list';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
-const vijayroutes: Routes = [
-  {path:'' , redirectTo :'link1', pathMatch:'full'},
-  { path: 'link1', component: IndexComponent },
-  { path: 'link2', component: FirstComponent }
+const myroutes: Routes = [
+  { path:'' , redirectTo :'parent', pathMatch:'full'},
+  { path: 'parent', component: IndexComponent },
+  { path: 'child', component: FirstComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({
-  declarations: [AppComponent,IndexComponent,FirstComponent],
-  imports: [BrowserModule, HttpModule,  RouterModule.forRoot(vijayroutes) ],
+  declarations: [AppComponent, IndexComponent, FirstComponent, AboutComponent, ContactComponent],
+  imports: [BrowserModule, HttpModule,  RouterModule.forRoot(myroutes) ],
   providers: [firstServiceJsonData],
   bootstrap: [AppComponent]
 })

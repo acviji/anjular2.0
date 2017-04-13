@@ -1,6 +1,32 @@
-<a routerLink="/link1">Link1</a>
-<a routerLink="/link2">Link2</a>
+   <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom">
+        <div class="container">
 
-<router-outlet></router-outlet>
-<!--<app-index></app-index>
-<app-first></app-first>-->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a routerLink="/parent">Parent</a>
+                    </li>
+                    <li>
+                        <a routerLink="/child">Child</a>
+                    </li>
+                    <li>
+                        <a routerLink="/about">About us</a>
+                    </li>
+                    <li>
+                        <a routerLink="/contact">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+

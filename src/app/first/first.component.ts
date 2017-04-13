@@ -1,12 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { firstServiceJsonData } from '../service/drinks_list';
-
-
-declare var $:any;
-//[style.color]
-//[class.pink] = true;
-//[ngclass] = "{'pink':true}"
-//[ngStyle]=''
 
 @Component({
   selector: 'app-first',
@@ -17,6 +10,8 @@ export class FirstComponent  {
 constructor(private firstservicejsondata: firstServiceJsonData ) {}
 
 isTrue:boolean = true;
+@Input() getData:any;
+@Input() getData1:any;
 
 //User Details from Service Url
   userserviceResultList = [];
@@ -56,16 +51,15 @@ isTrue:boolean = true;
   }
 
 // Get values from input and bind in HTML 
-   inputValue:any = 'Default Text';
+  inputValue:any = 'Default Text';
    getText(myvalue){
     this.inputValue = myvalue;
    }
-//
-   
 
     ngOnInit() {
       this.userServiceResults();
       this.postServiceResults();
     }
+   
 
 }
