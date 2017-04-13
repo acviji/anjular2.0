@@ -40,6 +40,20 @@ isTrue:boolean = true;
     );
   }
 
+
+   userIDResultList = [];
+  userIDResult() {
+    this.firstservicejsondata.postService().subscribe(
+        data => {
+            this.userIDResultList = data;
+            console.log(data);
+        },
+        error => console.log(error),
+        () => console.log("Done")
+    );
+  }
+
+
   postserviceResultfilterList = [];
   filterById(obj){
       var items = obj;
@@ -51,7 +65,12 @@ isTrue:boolean = true;
   }
 
 // Get values from input and bind in HTML 
+<<<<<<< HEAD:src/app/first/first.component.ts
   inputValue:any = 'Default Text';
+=======
+
+   inputValue:any = 'Default Text';
+>>>>>>> origin/master:src/app/about/first.component.ts
    getText(myvalue){
     this.inputValue = myvalue;
    }
@@ -59,6 +78,7 @@ isTrue:boolean = true;
     ngOnInit() {
       this.userServiceResults();
       this.postServiceResults();
+      this.userIDResult();
     }
    
 
